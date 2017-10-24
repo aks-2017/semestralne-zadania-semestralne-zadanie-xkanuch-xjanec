@@ -44,17 +44,20 @@ Je dynamický smerovací protokol, ktorý sa používa v rámci jedného autonó
 -	Vzájomné prepojenia medzi smerovačmi
 -	Všetky koncové aj prepojovacie siete
 -	Ceny všetkých rozhraní
+
 Po kompletnom prešírení informácii o celej topológii všetkým smerovačom v tejto sieti si smerovače vypočítajú najkratšiu cestu do každého vrcholu použitím, napríklad Dijkstrovým algoritmom. 
 V OSPF protokole sa stretneme s dôležitými pojmami:
 Pre identifikáciu a ohodnotenie (cena, IP adresa...) rozhrania/linky smerovača – Link, Link-state, Link-state ID, Link ID. Na identifikáciu smerovača vo vnútornej sieti – Router ID. V rámci firemnej sieti môžeme mať definované rôzne oblasti (arey), kde smerovače v konkrétnej oblasti poznajú celú topológiu len tejto oblasti. Pričom každá oblasť musí mať spojenie s backbone  oblasťou. OSPF sa skladá z troch štruktúr:
 1.	Tabuľka susedov –informácie o známych susedov
 2.	Topologická databáza – informácie o všetkých smerovačoch a ich pripojených sieťach v danej oblasti ale taktiež aj informácie o sieťach v iných oblastiach
 3.	Smerovacia tabuľka – obsahuje next-hop na najkratšej ceste pre každú známu sieť
+
 Pre vytvorenie susedstva v OSPF medzi dvoma smerovačmi je potrebné splniť nasledujúce kritéria:
 ◦	Obe rozhrania musia byť v rovnakej podsieti
 ◦	Hello a Dead interval časovaču musí byť zhodný na oboch rozhraniach
 ◦	Obe rozhrania musia byť v rovnakej oblasti
 ◦	V prípade, že je nastavená autentifikácia tak na oboch rozhraniach musí byť rovnaká
+
 Nadviazanie susedstva prebieha buď automaticky (multicast adresa) alebo manuálne (unicast adresa). Poslednou najdôležitejšou častou v OSPF sú správy, ktoré sú rôznych typov:
 Hello - Objavovanie susedných smerovačov
  	Database Description (DBD) – porovnanie topologických informácii
