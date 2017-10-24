@@ -71,6 +71,16 @@ Konvergencia v OSPF sieťach sa skladá z dvoch častí a to detekciou zmien v t
 Prepočet trasy vykoná každý smerovač po zistení zlyhania. Na všetky smerovače v oblasti OSPF sa odosiela LSA , ktorá signalizuje zmenu topológie. To spôsobí, že smerovače môžu prepočítať všetky svoje trasy pomocou algoritmu Djikstra (SPF). Toto je náročná úloha pre procesor, čo pri obrovských sieťach s často padajúcimi spojeniami môže spôsobiť preťaženia procesora na smerovači.  Preto sa zaviedoli spf časovače spf-delay (5 sekúnd) a spf-holdtime (10 sekúnd), ktoré zabezpečia „dýchací“ priestor pre procesor na smerovači. Je tiež možné naplánovať spúšťanie SPF ihneď po zaplavení informácií LSA, čo však môže potenciálne spôsobiť nestabilitu.
 
 
+| Timers        | Time          |
+| ------------- |:-------------:|
+| ip ospf hello-interval      | 10 sec / 30 sec | 
+| ip ospf dead-interval     | 40 sec / 120 sec (4 x hello)     |
+| ip ospf retransmit-interval | 5 sec      |
+| ip ospf transmit-delay |	1 sec |
+| timers spf spf-delay |	5 sec |
+| timers spf spf-holdtime |	10 sec |
+| LSA Generation Interval |	0.5 sec |
+
 [^1]: https://github.com/mininet/mininet
 [^2]: https://www.sdxcentral.com/products/hp-virtual-application-networks-van-sdn-controller/
 [^3]: https://www.sdxcentral.com/sdn/definitions/what-is-openflow/
@@ -96,7 +106,6 @@ V našom riešení sme sa rozhodli overiť nasledujúce výsledky ich práce:
 
 6. Rôzne časy časovačov (dead interval, ...) protokolu OSPF 
 
-![TIMERS](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/timers-OSPF.PNG "TIMERS")
 
 ## Použité nástroje:
 1. Mininet
