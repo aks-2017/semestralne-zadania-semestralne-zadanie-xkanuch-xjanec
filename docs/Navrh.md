@@ -31,11 +31,12 @@ Taktiež umožňuje úpravusmerovacích tabuliek pomocou pridávania rôznych pr
 Mininet [^1] je virtuálna sieť pre simuláciu SDN sieti. Napodobňuje kompletnú sieť zariadení ako hosty, prepínače a jednotlivé prepojenia medzi nimi. 
 Dokáže simulovať sieť pomocou virtualizácie založeniej na procesoch.
 Taktiež podporuje protokol OpenFlow. 
-![SDN](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/HPVAN.jpg "HP VAN Controller")
 
 ### HP VAN SDN
 
 HP VAN SDN kontrolér [^2] je softvér, ktorý poskytuje centrálny bod pre správu sieti podporujúce protokol OpenFlow. Taktiež poskytuje rozhranie pre vývoj Java aplikácií inými vývojarmi. Je navrhnutý najmä pre fungovanie v dátových centrách.
+
+![HPVAN](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/HPVAN.jpg "HP VAN Controller")
 
 ### OSPF – Open Shortest Path First
 
@@ -65,6 +66,7 @@ Hello - Objavovanie susedných smerovačov
  	Link State Update (LSU) – odpoveď na LSR v ktorej sa nachádzajú topologické informácie(LSA)
  	Link State Acknowledgement (LSAck) - potvrdenie prijatia LSU
  	Link State Advertisement (LSA) - dátová štruktúra, v ktorej sa nachádza jedna konkrétna topologická informácia ako ID smerovača a informácie o všetkých jeho priamo pripojených sieti v danej oblasti (LSU môže obsahovať viac LSA)
+
 Konvergencia v OSPF sieťach sa skladá z dvoch častí a to detekciou zmien v topológii a následne prepočítanie trasy. OSPF môže zmenu v sieti zistiť dvomi spôsobmi a to zmenou stavu na fyzickom rozhraní, kde sa LSA odosiela okamžite alebo potom vypršaním dead časovača (4x hello správa) čo spôsobuje pomalšiu konvergenciu tá sa dá zrýchliť znížením hello časovača no v tomto prípade musíme dávať pozor aby sme nenastavili príliš nízku hodnotu čo by spôsobilo obrovské zlyhania.
 Prepočet trasy vykoná každý smerovač po zistení zlyhania. Na všetky smerovače v oblasti OSPF sa odosiela LSA , ktorá signalizuje zmenu topológie. To spôsobí, že smerovače môžu prepočítať všetky svoje trasy pomocou algoritmu Djikstra (SPF). Toto je náročná úloha pre procesor, čo pri obrovských sieťach s často padajúcimi spojeniami môže spôsobiť preťaženia procesora na smerovači.  Preto sa zaviedoli spf časovače spf-delay (5 sekúnd) a spf-holdtime (10 sekúnd), ktoré zabezpečia „dýchací“ priestor pre procesor na smerovači. Je tiež možné naplánovať spúšťanie SPF ihneď po zaplavení informácií LSA, čo však môže potenciálne spôsobiť nestabilitu.
 
