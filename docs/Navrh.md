@@ -41,10 +41,10 @@ HP VAN SDN kontrolér [^2] je softvér, ktorý poskytuje centrálny bod pre spr�
 ### OSPF – Open Shortest Path First
 
 Je dynamický smerovací protokol, ktorý sa používa v rámci jedného autonómneho systému (IGP). Patrí do skupiny Link-state protokolov vďaka čomu smerovač vo firemnej sieti pozná:
-	Všetky ostatné smerovače
-	Vzájomné prepojenia medzi smerovačmi
-	Všetky koncové aj prepojovacie siete
-	Ceny všetkých rozhraní
+- Všetky ostatné smerovače
+- Vzájomné prepojenia medzi smerovačmi
+- Všetky koncové aj prepojovacie siete
+- Ceny všetkých rozhraní
 
 Po kompletnom prešírení informácii o celej topológii všetkým smerovačom v tejto sieti si smerovače vypočítajú najkratšiu cestu do každého vrcholu použitím, napríklad Dijkstrovým algoritmom. 
 V OSPF protokole sa stretneme s dôležitými pojmami:
@@ -54,18 +54,18 @@ Pre identifikáciu a ohodnotenie (cena, IP adresa...) rozhrania/linky smerovača
 3.	Smerovacia tabuľka – obsahuje next-hop na najkratšej ceste pre každú známu sieť
 
 Pre vytvorenie susedstva v OSPF medzi dvoma smerovačmi je potrebné splniť nasledujúce kritéria:
-	Obe rozhrania musia byť v rovnakej podsieti
-	Hello a Dead interval časovaču musí byť zhodný na oboch rozhraniach
-	Obe rozhrania musia byť v rovnakej oblasti
-	V prípade, že je nastavená autentifikácia tak na oboch rozhraniach musí byť rovnaká
+- Obe rozhrania musia byť v rovnakej podsieti
+- Hello a Dead interval časovaču musí byť zhodný na oboch rozhraniach
+- Obe rozhrania musia byť v rovnakej oblasti
+- V prípade, že je nastavená autentifikácia tak na oboch rozhraniach musí byť rovnaká
 
 Nadviazanie susedstva prebieha buď automaticky (multicast adresa) alebo manuálne (unicast adresa). Poslednou najdôležitejšou častou v OSPF sú správy, ktoré sú rôznych typov:
 Hello - Objavovanie susedných smerovačov
- 	Database Description (DBD) – porovnanie topologických informácii
- 	Link State Request (LSR) - požiadavka na zaslanie topologickej informácie
- 	Link State Update (LSU) – odpoveď na LSR v ktorej sa nachádzajú topologické informácie(LSA)
- 	Link State Acknowledgement (LSAck) - potvrdenie prijatia LSU
- 	Link State Advertisement (LSA) - dátová štruktúra, v ktorej sa nachádza jedna konkrétna topologická informácia ako ID smerovača a informácie o všetkých jeho priamo pripojených sieti v danej oblasti (LSU môže obsahovať viac LSA)
+- Database Description (DBD) – porovnanie topologických informácii
+- Link State Request (LSR) - požiadavka na zaslanie topologickej informácie
+- Link State Update (LSU) – odpoveď na LSR v ktorej sa nachádzajú topologické informácie(LSA)
+- Link State Acknowledgement (LSAck) - potvrdenie prijatia LSU
+- Link State Advertisement (LSA) - dátová štruktúra, v ktorej sa nachádza jedna konkrétna topologická informácia ako ID smerovača a informácie o všetkých jeho priamo pripojených sieti v danej oblasti (LSU môže obsahovať viac LSA)
 
 Konvergencia v OSPF sieťach sa skladá z dvoch častí a to detekciou zmien v topológii a následne prepočítanie trasy. OSPF môže zmenu v sieti zistiť dvomi spôsobmi a to zmenou stavu na fyzickom rozhraní, kde sa LSA odosiela okamžite alebo potom vypršaním dead časovača (4x hello správa) čo spôsobuje pomalšiu konvergenciu tá sa dá zrýchliť znížením hello časovača no v tomto prípade musíme dávať pozor aby sme nenastavili príliš nízku hodnotu čo by spôsobilo obrovské zlyhania.
 Prepočet trasy vykoná každý smerovač po zistení zlyhania. Na všetky smerovače v oblasti OSPF sa odosiela LSA , ktorá signalizuje zmenu topológie. To spôsobí, že smerovače môžu prepočítať všetky svoje trasy pomocou algoritmu Djikstra (SPF). Toto je náročná úloha pre procesor, čo pri obrovských sieťach s často padajúcimi spojeniami môže spôsobiť preťaženia procesora na smerovači.  Preto sa zaviedoli spf časovače spf-delay (5 sekúnd) a spf-holdtime (10 sekúnd), ktoré zabezpečia „dýchací“ priestor pre procesor na smerovači. Je tiež možné naplánovať spúšťanie SPF ihneď po zaplavení informácií LSA, čo však môže potenciálne spôsobiť nestabilitu.
@@ -102,10 +102,21 @@ V našom riešení sme sa rozhodli overiť nasledujúce výsledky ich práce:
 4. Response time OSPF siete na Cisco ios routroch
 5. Veľkosti topológií: 10, 20, 30 switchov(SDN)/routerov(ios)
 
-![TOPOLOGY](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/topology.PNG "TOPOLOGY")
+![TOPOLOGY](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/topology.PNG "Príklad topológie")
 
 6. Rôzne časy časovačov (dead interval, ...) protokolu OSPF 
 
+#### HP VAN kontroler
+
+V zadaní vytvoríme automatický deployovací skript pre nainštalovanie daného kontrolera na serveri.
+
+#### Vytvorenie topológie
+
+Pre vytvorenie jednotlivých veľkostí topológií a ich konfiguráciu vytvoríme buildovacie skripty pre SDN siete. Pre OSPF podporujúce siete vytvoríme konfiguračné súbory pre jednotlivé zariadenia v sieti.
+
+#### Testovanie
+
+Vytvoríme skripty pre automatické testovanie jednotlivých vykonaných meraní, a to pre merania času konvergencie a pre meranie času odozvy daného zariadenia pri zlyhaní jednotlivých liniek.
 
 ## Použité nástroje:
 1. Mininet
@@ -116,3 +127,4 @@ V našom riešení sme sa rozhodli overiť nasledujúce výsledky ich práce:
 6. Virtual Box
 7. Nástroj hrping
 8. Nástroj tcping 
+9. Python
