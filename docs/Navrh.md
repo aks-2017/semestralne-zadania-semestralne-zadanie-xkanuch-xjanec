@@ -81,14 +81,21 @@ Prepočet trasy vykoná každý smerovač po zistení zlyhania. Na všetky smero
 
 V našom riešení sme sa rozhodli overiť nasledujúce výsledky ich práce:
 1. Konvergenciu SDN siete v mininete s pomocou kontroleru podporujúcim SPF algoritmu na OFswitchoch
+
 ![SDN](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/SDN-convergence.PNG "SDN Convergence")
+
 2. Konvergenciu OSPF siete na Cisco ios routroch
+
 ![OSPF](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/OSPF-convergence.PNG "OSPF Convergence")
+
 3. Response time SDN siete v mininete s pomocou kontroleru podporujúcim SPF algoritmu na OFswitchoch
 4. Response time OSPF siete na Cisco ios routroch
 5. Veľkosti topológií: 10, 20, 30 switchov(SDN)/routerov(ios)
+
 ![TOPOLOGY](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/topology.PNG "TOPOLOGY")
+
 6. Rôzne časy časovačov (dead interval, ...) protokolu OSPF 
+
 ![TIMERS](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/timers-OSPF.PNG "TIMERS")
 
 ## Použité nástroje:
