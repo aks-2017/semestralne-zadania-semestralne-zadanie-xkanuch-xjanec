@@ -10,34 +10,38 @@
 
 ### SDN siete
 
-Software-Defined Networks (SDN) je centralizovaná topológia architektúry. 
+Software-Defined Networks (SDN) je centralizovaná topológia architektúry [^4]. 
 
-![SDN](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/sdn-architecture.png)
+![SDN](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/sdn-architecture.png "SDN architektúra")
 
 SDN architektúra sa skladá z:
 - Aplikačná vrstva - ponúka služby pre virtualizáciu, smerovanie, firewall, ...
 - Control vrstva - pozostáva z kontrolera, ktorý jednak komunikuje s aplikáciami cez rozhranie, ale aj priamo s fyzickou vrstvou (infraštruktúrou).
 - Vrstva infraštruktúry 
 
-Základ v SDN tvorí virtualizácia. Dovoľuje, aby softvér bežal nezávisle od hardvéru.
+Základ v SDN tvorí virtualizácia. Dovoľuje, aby softvér bežal nezávisle od hardvéru [^5].
 
 ### Protokol OpenFlow
 
-Komunikačný protokol pre SDN siete, ktorý umožňuje priamu interakciu kontrolera s fyzickými zariadeniami. Je štandard, ktorý dovoľuje vzdialene konfigurovať zariadenia od rôznych výrobcov. 
+Komunikačný protokol pre SDN siete, ktorý umožňuje priamu interakciu kontrolera s fyzickými zariadeniami. Je štandard, ktorý dovoľuje vzdialene konfigurovať zariadenia od rôznych výrobcov [^3]. 
 Taktiež umožňuje úpravusmerovacích tabuliek pomocou pridávania rôznych pravidiel. 
 
 ### Mininet
 
-Mininet je virtuálna sieť pre simuláciu SDN sieti. Napodobňuje kompletnú sieť zariadení ako hosty, prepínače a jednotlivé prepojenia medzi nimi. 
+Mininet [^1] je virtuálna sieť pre simuláciu SDN sieti. Napodobňuje kompletnú sieť zariadení ako hosty, prepínače a jednotlivé prepojenia medzi nimi. 
 Dokáže simulovať sieť pomocou virtualizácie založeniej na procesoch.
 Taktiež podporuje protokol OpenFlow. 
-![SDN](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/HPVAN.jpg)
-[comment]: <> (https://github.com/mininet/mininet)
+![SDN](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/HPVAN.jpg "HP VAN Controller")
 
 ### HP VAN SDN
 
-HP VAN SDN kontrolér je softvér, ktorý poskytuje centrálny bod pre správu sieti podporujúce protokol OpenFlow. Taktiež poskytuje rozhranie pre vývoj Java aplikácií inými vývojarmi. Je navrhnutý najmä pre fungovanie v dátových centrách.
-[comment]: <> (https://www.sdxcentral.com/products/hp-virtual-application-networks-van-sdn-controller/)
+HP VAN SDN kontrolér [^2] je softvér, ktorý poskytuje centrálny bod pre správu sieti podporujúce protokol OpenFlow. Taktiež poskytuje rozhranie pre vývoj Java aplikácií inými vývojarmi. Je navrhnutý najmä pre fungovanie v dátových centrách.
+
+[^1]: https://github.com/mininet/mininet
+[^2]: https://www.sdxcentral.com/products/hp-virtual-application-networks-van-sdn-controller/
+[^3]: https://www.sdxcentral.com/sdn/definitions/what-is-openflow/
+[^4]: https://www.opennetworking.org/sdn-definition/
+[^5]: https://www.networkcomputing.com/cloud-infrastructure/7-essentials-software-defined-networking/1672824201
 
 ## Návrh zadania
 
