@@ -17,7 +17,7 @@ V našom riešení sme sa rozhodli overiť nasledujúce výsledky ich práce:
 6. Rôzne časy časovačov (dead interval, ...) protokolu OSPF 
 
 
-##Použité nástroje:
+## Použité nástroje:
 1. Mininet
 2. HP VAN SDN kontroler
 3. GNS3
