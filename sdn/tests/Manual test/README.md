@@ -26,7 +26,7 @@
 
 5. Put link down in mininet:
 
-    `link s1 s2 down`
+    `link s5 s7 down`
 
     and take a look at response time from h2 in h1 console
 

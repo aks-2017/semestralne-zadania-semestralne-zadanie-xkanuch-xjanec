@@ -5,7 +5,7 @@
 
     `47: def myTest():`
 
-        `48: c = RemoteController('c', '192.168.56.102', 6633)`
+    `48: c = RemoteController('c', '192.168.56.102', 6633)`
 
 2. Run script (Before running we recommend run command *sudo mn -c*):
 
