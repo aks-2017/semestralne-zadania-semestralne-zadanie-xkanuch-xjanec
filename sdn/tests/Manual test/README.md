@@ -20,7 +20,7 @@
 
     `xterm h1`
 
-and in h1 console run:
+    and in h1 console run:
 
     `tcpping h2`
 
