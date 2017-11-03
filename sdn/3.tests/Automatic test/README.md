@@ -17,6 +17,6 @@
 
 4. You can change configuration of link down in script adding or removing following line:
 
-    `66: net.configLinkStatus('s1','s3','down')`
+    `66: net.configLinkStatus('s5','s7','down')`
 
 
