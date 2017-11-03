@@ -2,9 +2,9 @@
 
 In our measurement we used script for automatic testing, in which we took down following link:
 
-    1. link between swicth s5 and s7
+    1. link between switch s5 and s7
 
-    2. link between swicth s8 and s10
+    2. link between switch s8 and s10
 
 ![linkDown](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/linkDown.PNG "Link down")
 
