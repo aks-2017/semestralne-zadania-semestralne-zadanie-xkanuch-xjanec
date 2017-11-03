@@ -2,9 +2,10 @@
 
 1. Run mininet:
 
-`sudo mn --controller=remote,ip=*ipaddress* --custom *topologyFile* --topo=mytopo --link=tc --mac`
+`sudo mn --controller=remote,ip=ipaddress --custom topologyFile --topo=mytopo --link=tc --mac`
 
 *ipaddress* - ip address of your controller
+
 *topologyFile* -  [topology file](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/sdn/topology/topologySDN.py)
 
 2. Test connectivity:
