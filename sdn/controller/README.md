@@ -21,3 +21,11 @@
     `username: sdn`
     
     `password: skyline`
+
+7. Configurate loop prevention in topology:
+
+    Go to: `Configurations -> com.hp.sdn.ctl.of.impl.ControllerManager -> hybrid.mode`
+    
+    Click: `Modify`
+
+    Set value: `false`

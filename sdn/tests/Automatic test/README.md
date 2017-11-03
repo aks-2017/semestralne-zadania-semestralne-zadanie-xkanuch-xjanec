@@ -4,6 +4,7 @@
 1. Change IP addres on line 48 in script to IP address of your controller:
 
     `47: def myTest():`
+
         `48: c = RemoteController('c', '192.168.56.102', 6633)`
 
 2. Run script (Before running we recommend run command *sudo mn -c*):
