@@ -6,7 +6,7 @@
 
     *ipaddress* - ip address of your controller
 
-    *topologyFile* -  [topology file](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/sdn/topology/topologySDN.py)
+    *topologyFile* -  [topology file](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/sdn/2.topology/topologySDN.py)
 
 2. Test connectivity:
 
