@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.2.16)  18 NOV 2017 23:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.2.16)  19 NOV 2017 15:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -665,6 +665,63 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
+Underfull \hbox (badness 5091) in paragraph at lines 61--62
+[]\OT1/ptm/m/n/10 Naj[]castej[]sie pou[]z[]van[]ym sme-ro-vac[]m pro-to-ko-lo
+m vo
+ []
+
+<../img/sdn-architecture.png, id=1, 1306.8825pt x 861.2175pt>
+File: ../img/sdn-architecture.png Graphic file (type png)
+
+<use ../img/sdn-architecture.png>
+Package pdftex.def Info: ../img/sdn-architecture.png used on input line 83.
+(pdftex.def)             Requested size: 216.81pt x 142.87007pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../img/HPVAN.jpg, id=2, 1284.8pt x 722.7pt>
+File: ../img/HPVAN.jpg Graphic file (type jpg)
+ <use ../img/HPVAN.jpg>
+Package pdftex.def Info: ../img/HPVAN.jpg used on input line 104.
+(pdftex.def)             Requested size: 216.81pt x 121.95311pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1{C:/Users/Peter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+ <../img/sdn-architecture.png>] <../img/topology.png, id=12, 823.27576pt x 345.
+6915pt>
+File: ../img/topology.png Graphic file (type png)
+
+<use ../img/topology.png>
+Package pdftex.def Info: ../img/topology.png used on input line 121.
+(pdftex.def)             Requested size: 216.81pt x 91.03812pt.
+
+<../img/topologySDN.png, id=14, 525.46312pt x 299.61937pt>
+File: ../img/topologySDN.png Graphic file (type png)
+
+<use ../img/topologySDN.png>
+Package pdftex.def Info: ../img/topologySDN.png used on input line 127.
+(pdftex.def)             Requested size: 216.81pt x 123.62651pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+[]\OT1/ptm/m/n/8 Software-Defined Ne-twor-king (SDN) De-fi-ni-tion, $https : / 
+/ www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+[]\OT1/ptm/m/n/8 HP Vir-tual App-li-ca-tion Net-works (VAN) SDN
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+\OT1/ptm/m/n/8 Con-trol-ler, $https : / / www . sdxcentral . com / products /
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -676,27 +733,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[1{C:/Users/Peter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-
-] (main.aux) ) 
+[2 <../img/HPVAN.jpg> <../img/topology.png> <../img/topologySDN.png>] (main.aux
+) ) 
 Here is how much of TeX's memory you used:
- 4585 strings out of 493333
- 64640 string characters out of 3139194
- 139106 words of memory out of 3000000
- 8044 multiletter control sequences out of 15000+200000
- 33007 words of font info for 62 fonts, out of 3000000 for 9000
+ 4639 strings out of 493333
+ 65430 string characters out of 3139194
+ 146121 words of memory out of 3000000
+ 8083 multiletter control sequences out of 15000+200000
+ 35734 words of font info for 72 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 40i,6n,25p,253b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a
-.pfb>
-Output written on main.pdf (1 page, 36291 bytes).
+ 40i,6n,25p,463b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
+/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (2 pages, 510866 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
+ 37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

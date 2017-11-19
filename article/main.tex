@@ -51,54 +51,86 @@ Email: xjanec@stuba.sk}}
 \end{abstract}
 
 \begin{IEEEkeywords}
-
+SDN, Mininet, OpenFlow, HP Van, OSPF, Cisco iOS
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
 
 \section{Úvod}
 
+Najčastejšie používaným smerovacím protokolom vo veľkých korporátnych, či firemných sieťach je protokol OSPF (\textit{Open Shortest Path First}) z dôvodu, že tento protokol podporuje širokú škálu funkcionality pre siete poskytovateľov \cite{first}. V poslednom období sa začali dostávať do popredia SDN siete (\textit{Softvérovo riadené siete}), ktoré prinášajú určité výhody oproti klasickým sieťam.
+
+\section{OSPF}
+
+Protokol OSPF patrí do skupiny protokolov \textit{Link-state}, a preto každý smerovač zapojený do siete pozná všetky ostatné smerovače v sieti, vzájomné prepojenia medzi nimi, všetky koncové aj prepojovacie siete a ceny všetkých rozhraní.
 
 
-\section{}
+\section{Softvérovo riadené siete}
+
+\subsection{SDN}
+Softvérovo riadené siete (SDN) majú centralizovanú architektúru \cite{second}, čo znamená, že zariadenia v sieti sú centralizovane riadené z jedného kontroléra. SDN architektúru tvoria nasledovné vrstvy:
+
+\begin{itemize}
+	\item{Aplikačná vrstva - ponúka služby pre virtualizáciu, smerovanie, firewall, ...}
+	\item{Kontrolná vrstva - pozostáva z kontrolera, ktorý jednak komunikuje s aplikáciami cez rozhranie, ale aj priamo s fyzickou vrstvou (infraštruktúrou).}
+	\item{Vrstva infraštruktúry - pozostáva z fyzických zariadení pripojených v sieti}
+\end{itemize}
+
+Základným prvkom v Softvérovo riadených sieťach je virtualizácia. Tá dovoľuje, aby softvér, ktorý riadi celú sieť bežal nezávisle od fyzickej vrstvy (zariadení/hardvéru) \cite{third}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/sdn-architecture}
+\caption{SDN architektúra}
+\end{figure}
+
+\subsection{OpenFlow}
+
+Komunikačný protokol pre SDN siete, ktorý umožňuje priamu interakciu kontrolera s fyzickými zariadeniami. Je štandard, ktorý dovoľuje vzdialene konfigurovať zariadenia od rôznych výrobcov \cite{fourth}. Taktiež umožňuje úpravu smerovacích tabuliek pomocou pridávania rôznych pravidiel.
+
+\section{Testovanie}
+
+\subsection{Testovacie prostredie}
+
+\begin{itemize}
+\item{VirtualBox v5.1.28}
+\item{Ubuntu-14.04.5-server-amd64}
+\item{Mininet simulátor -}
+Mininet je nástroj určený pre simuláciu SDN sieti \cite{fifth}. Napodobňuje kompletnú sieť zariadení ako hosty, prepínače a jednotlivé prepojenia medzi nimi. Dokáže simulovať sieť pomocou virtualizácie založeniej na procesoch. Taktiež podporuje protokol OpenFlow.
+\item{HP Van SDN kontrolér -} je softvér, ktorý poskytuje centrálny bod pre správu sieti podporujúce protokol OpenFlow \cite{sixth}. Taktiež poskytuje rozhranie pre vývoj Java aplikácií inými vývojarmi. Je navrhnutý najmä pre fungovanie v dátových centrách.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/HPVAN}
+\caption{HP Van SDN kontrolér}
+\end{figure}
 
 
+\item{Python}
+\item{Cisco iOS 7200}
+\item{GNS3 -} nástroj určený pre simuláciu sieti podporujúcich Cisco zariadenia.
+\item{TCPping -} nástroj, ktorý dokáže simulovať HTTP komunikáciu.
+\end{itemize}
 
+\subsection{Topológia siete}
 
+Pre testovacie účely sme vytvorili tri veľkostí topológie, a to topológia s desiatimi, dvadsiatimi a tridsiatimi zariadeniami. 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/topology}
+\caption{Príklad topológie s dvadsiatimi zariadeniami v nástroji GNS3}
+\end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/topologySDN}
+\caption{Príklad topológie s desiatimi zariadeniami v Mininete}
+\end{figure}
 
-\subsection{}
+\subsection{Konvergencia siete}
 
-
-
-
-
-\subsection{}
-
-
-
-%**********************************************************************************************************************
-\section{}
-
-
-
-\subsection{}
-
-
-
-
-\subsection{}
-
-
-
-\subsection{}
-
-
-\section{}
-
-\subsection{}
-
+\subsection{Doba odozvy}
 
 
 \subsection{}
@@ -125,8 +157,17 @@ Email: xjanec@stuba.sk}}
 
 
 \begin{thebibliography}{1}
-\bibitem{}
+\bibitem{first}KHAN, Asad Ali, et al. A Convergence Time Optimization Paradigm for OSPF based Networks Through SDN SPF Protocol Computer Communications and Networks (CCN)/Delay Tolerant Networks. In: Proceedings of the International Conference on Future Networks and Distributed Systems. ACM, 2017. p. 43.
 
+\bibitem{second}Software-Defined Networking (SDN) Definition, \url{https://www.opennetworking.org/sdn-definition/}, Accessed: 19.11.2017
+
+\bibitem{third}FOGARTY, Susan. 7 Essentials of Software-Defined Networking. Information Week Network Computing, 2013.
+
+\bibitem{fourth}What is OpenFlow? Definition and How it Relates to SDN, \url{https://www.sdxcentral.com/sdn/definitions/what-is-openflow/},  Accessed: 19.11.2017
+
+\bibitem{fifth}Mininet: Rapid Prototyping for Software Defined Networks, \url{https://github.com/mininet/mininet}
+
+\bibitem{sixth}HP Virtual Application Networks (VAN) SDN Controller, \url{https://www.sdxcentral.com/products/hp-virtual-application-networks-van-sdn-controller/}
 
 \end{thebibliography}
 
