@@ -97,7 +97,7 @@ Komunikačný protokol pre SDN siete, ktorý umožňuje priamu interakciu kontro
 \item{Ubuntu-14.04.5-server-amd64}
 \item{Mininet simulátor -}
 Mininet je nástroj určený pre simuláciu SDN sieti \cite{fifth}. Napodobňuje kompletnú sieť zariadení ako hosty, prepínače a jednotlivé prepojenia medzi nimi. Dokáže simulovať sieť pomocou virtualizácie založeniej na procesoch. Taktiež podporuje protokol OpenFlow.
-\item{HP Van SDN kontrolér -} je softvér, ktorý poskytuje centrálny bod pre správu sieti podporujúce protokol OpenFlow \cite{sixth}. Taktiež poskytuje rozhranie pre vývoj Java aplikácií inými vývojarmi. Je navrhnutý najmä pre fungovanie v dátových centrách.
+\item{HP Van SDN kontrolér 2.7.18 -} je softvér, ktorý poskytuje centrálny bod pre správu sieti podporujúce protokol OpenFlow \cite{sixth}. Taktiež poskytuje rozhranie pre vývoj Java aplikácií inými vývojarmi. Je navrhnutý najmä pre fungovanie v dátových centrách. Návod na jeho inštaláciu a potrebné nastavenia nájdete na \url{github.com} k tomuto článku.
 
 \begin{figure}[h!]
 \centering
@@ -112,9 +112,15 @@ Mininet je nástroj určený pre simuláciu SDN sieti \cite{fifth}. Napodobňuje
 \item{TCPping -} nástroj, ktorý dokáže simulovať HTTP komunikáciu.
 \end{itemize}
 
-\subsection{Topológia siete}
+\subsection{Topológia siete \label{topo}}
 
-Pre testovacie účely sme vytvorili tri veľkostí topológie, a to topológia s desiatimi, dvadsiatimi a tridsiatimi zariadeniami. 
+Pre testovacie účely sme vytvorili tri veľkostí topológie, a to topológia s desiatimi, dvadsiatimi a tridsiatimi zariadeniami. V topológii sú na oboch jej koncoch zapojené počítače. Každá linka v sieti medzi dvoma zariadeniami má nasledujúce parametre:
+
+\begin{enumerate}
+\item{bandwidth linky = 10}
+\item{delay = 1.5 ms}
+\item{spoľahlivosť (loss) = 0}
+\end{enumerate}
 
 \begin{figure}[h!]
 \centering
@@ -130,20 +136,81 @@ Pre testovacie účely sme vytvorili tri veľkostí topológie, a to topológia 
 
 \subsection{Konvergencia siete}
 
-\subsection{Doba odozvy}
+Jednou z charakteristických vecí dynamických smerovacích protokolov je aj to, že sa musia v čo najkratšom možnom čase prispôsobiť na akúkoľvek zmenu v sieti. Smerovací protokol OSPF si pamätá celú topológiu siete a reaguje na akúkoľvek zmenu v sieti, pripojenie/odpojenie linky a pod. Takýto stav, kedy všetky zariadenia v sieti (routre) majú informácie o všetkých linkách a najrýchlejších cestách voláme \textit{konvergencia} a čas, potrebný na dosiahnutie takéhoto stavu po zmene v sieti, nazývame \textit{čas konvergencie} \cite{seventh}.  
+Ten v IGP protokoloch pozostáva zo štyroch hlavných častí \cite{eigth}: 
+
+\begin{enumerate}
+	\item{Reakcia na zmenu v sieti}
+		\begin{itemize}
+			\item{Indikačný čas zlyhania/obnovenia na fyzickej vrstve}
+			\item{Indikačný čas zlyhania/obnovenia na linkovej vrstve}
+			\item{Intervaly časovačov IGP protokolov}
+		\end{itemize}
+	\item{Čas vykonania algoritmu SPF (Shortest Path First)}
+	\item{LSA/LSP oznámenia}
+	\item{Čas potrebný na aktualizáciu FIB tabuľky v hardvéri}
+\end{enumerate}
+
+Čas konvergencie v SDN sieťach \cite{nineth}:
+
+\begin{enumerate}
+	\item{Reakcia na zmenu v sieti}
+	\item{Čas potrebný na aktualizáciu topológie}
+	\item{Čas vykonania algoritmu SPF (Shortest Path First)}
+	\item{Čas potrebný na aktualizáciu Flow tabuľky}
+\end{enumerate}
+
+\subsection{Návrh scenára pre testovanie}
+
+Pre odmeranie času konvergencie siete sme navrhli nasledovný scenár:
+
+\begin{itemize}
+	\item{Zapojenie navrhnutej topológie z časti \ref{topo}}
+	\item{Spustenie HTTP servra na jednom z pripojených hostov do siete}
+	\item{Spustenie merania pomocou nástroja TCPping z jedného hosta na host so sputeným HTTP serverom}
+	\item{Odpojenie linky v sieti, cez ktorú tečie premávka a tvorí slučku v sieti}
+\end{itemize}
+
+Pre uľahčenie vykonávania jednotlivých meraní sme napísali automatické testy naprogramované v pythone pre vykonanie simulácie v prostredí Mininet. 
+
+\section{Výsledky meraní}
+
+V testovacom prostredí sme vykonali 20 meraní pre každú topológiu a dosiahli sme nasledovné výsledky pre čas konvergencie zobrazený v grafoch.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/graph5}
+\caption{Čas konvergencie v SDN pre 5 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/graph10}
+\caption{Čas konvergencie v SDN pre 10 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/graph20}
+\caption{Čas konvergencie v SDN pre 20 zariadení}
+\end{figure}
 
 
-\subsection{}
+\section{Záver}
 
-
-
-\section{}
-
-
-
-\section{}
-
-
+\begin{table}[h!]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|c|c|c|}
+\hline
+                         & \multicolumn{2}{c|}{\textbf{Čas konvergencie}} \\ \hline
+\textbf{Počet zariadení} & \textbf{SDN {[}ms{]}}  & \textbf{OSPF {[}s{]}} \\ \hline
+\textbf{5}               & 1024.47                &                       \\ \hline
+\textbf{10}              & 1012.415             &                       \\ \hline
+\textbf{20}              & 1035.059               &                       \\ \hline
+\end{tabular}
+\end{table}
 
 
 
@@ -168,6 +235,12 @@ Pre testovacie účely sme vytvorili tri veľkostí topológie, a to topológia 
 \bibitem{fifth}Mininet: Rapid Prototyping for Software Defined Networks, \url{https://github.com/mininet/mininet}
 
 \bibitem{sixth}HP Virtual Application Networks (VAN) SDN Controller, \url{https://www.sdxcentral.com/products/hp-virtual-application-networks-van-sdn-controller/}
+
+\bibitem{seventh} What is Convergence of Routing Tables and What is Convergence Time, \url{http://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-convergence-of-routing-tables.php},  Accessed: 19.11.2017
+
+\bibitem{eigth} PORETSKY, S.; IMHOFF, B.; MICHIELSEN, K. Benchmarking Methodology for Link-State IGP Data-Plane Route Convergence. 2011.
+
+\bibitem{nineth} ZHANG, Hailong; YAN, Jinyao. Performance of SDN routing in comparison with legacy routing protocols. In: Cyber-Enabled Distributed Computing and Knowledge Discovery (CyberC), 2015 International Conference on. IEEE, 2015. p. 491-494.
 
 \end{thebibliography}
 
