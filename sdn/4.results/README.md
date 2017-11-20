@@ -10,7 +10,9 @@ In our measurement we used script for automatic testing, in which we took down f
 
 We repeated it for 20 times and got following results
 
-![1linkDown](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/graph1.PNG "1Link down")
+![1linkDown](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/graph5.PNG "1Link down")
 
 
-![2linkDown](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/graph2.PNG "2Link down")
+![2linkDown](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/graph10.PNG "2Link down")
+
+![2linkDown](https://github.com/aks-2017/semestralne-zadania-semestralne-zadanie-xkanuch-xjanec/blob/master/img/graph20.PNG "2Link down")
