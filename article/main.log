@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.2.16)  26 NOV 2017 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.2.16)  27 NOV 2017 15:49
 entering extended mode
 **./main.tex
 (main.tex
@@ -674,92 +674,146 @@ m vo
 File: ../img/sdn-architecture.png Graphic file (type png)
 
 <use ../img/sdn-architecture.png>
-Package pdftex.def Info: ../img/sdn-architecture.png used on input line 83.
+Package pdftex.def Info: ../img/sdn-architecture.png used on input line 97.
 (pdftex.def)             Requested size: 216.81pt x 142.87007pt.
+ [1{C:/Users/Peter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../img/HPVAN.jpg, id=2, 1284.8pt x 722.7pt>
+ <../img/sdn-architecture.png>]
+<../img/HPVAN.jpg, id=11, 1284.8pt x 722.7pt>
 File: ../img/HPVAN.jpg Graphic file (type jpg)
  <use ../img/HPVAN.jpg>
-Package pdftex.def Info: ../img/HPVAN.jpg used on input line 104.
+Package pdftex.def Info: ../img/HPVAN.jpg used on input line 118.
 (pdftex.def)             Requested size: 216.81pt x 121.95311pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[1{C:/Users/Peter/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
- <../img/sdn-architecture.png>] <../img/topology.png, id=12, 823.27576pt x 345.
-6915pt>
+<../img/topology.png, id=12, 823.27576pt x 345.6915pt>
 File: ../img/topology.png Graphic file (type png)
 
 <use ../img/topology.png>
-Package pdftex.def Info: ../img/topology.png used on input line 127.
+Package pdftex.def Info: ../img/topology.png used on input line 141.
 (pdftex.def)             Requested size: 216.81pt x 91.03812pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <../img/topologySDN.png, id=14, 525.46312pt x 299.61937pt>
 File: ../img/topologySDN.png Graphic file (type png)
 
 <use ../img/topologySDN.png>
-Package pdftex.def Info: ../img/topologySDN.png used on input line 133.
+Package pdftex.def Info: ../img/topologySDN.png used on input line 147.
 (pdftex.def)             Requested size: 216.81pt x 123.62651pt.
 
-Underfull \hbox (badness 2229) in paragraph at lines 170--171
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 184--185
 []\OT1/ptm/m/n/10 Spustenie me-ra-nia po-mo-cou n[]astroja TCP-ping z
  []
 
-
-Underfull \hbox (badness 3333) in paragraph at lines 174--175
+[2 <../img/HPVAN.jpg> <../img/topology.png> <../img/topologySDN.png>]
+Underfull \hbox (badness 3333) in paragraph at lines 188--189
 []\OT1/ptm/m/n/10 Pre ul[]ah[]cenie vy-kon[]avania jed-not-liv[]ych me-ran[] s
 me
  []
 
-<../img/graph5.png, id=15, 365.86688pt x 221.32687pt>
+<../img/graph5.png, id=20, 365.86688pt x 221.32687pt>
 File: ../img/graph5.png Graphic file (type png)
  <use ../img/graph5.png>
-Package pdftex.def Info: ../img/graph5.png used on input line 182.
+Package pdftex.def Info: ../img/graph5.png used on input line 196.
 (pdftex.def)             Requested size: 216.81pt x 131.15582pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../img/graph10.png, id=16, 365.86688pt x 220.57407pt>
+<../img/graph10.png, id=21, 365.86688pt x 220.57407pt>
 File: ../img/graph10.png Graphic file (type png)
 
 <use ../img/graph10.png>
-Package pdftex.def Info: ../img/graph10.png used on input line 188.
+Package pdftex.def Info: ../img/graph10.png used on input line 202.
 (pdftex.def)             Requested size: 216.81pt x 130.70973pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../img/graph20.png, id=17, 365.86688pt x 220.57407pt>
+<../img/graph20.png, id=22, 365.86688pt x 220.57407pt>
 File: ../img/graph20.png Graphic file (type png)
 
 <use ../img/graph20.png>
-Package pdftex.def Info: ../img/graph20.png used on input line 194.
+Package pdftex.def Info: ../img/graph20.png used on input line 208.
 (pdftex.def)             Requested size: 216.81pt x 130.70973pt.
+
+<../img/graph5ospf.png, id=23, 425.33907pt x 239.39438pt>
+File: ../img/graph5ospf.png Graphic file (type png)
+
+<use ../img/graph5ospf.png>
+Package pdftex.def Info: ../img/graph5ospf.png used on input line 214.
+(pdftex.def)             Requested size: 216.81pt x 122.0274pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2 <../img/HPVAN.jpg> <../img/topology.png> <../img/topologySDN.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+<../img/graph10ospf.png, id=24, 408.02437pt x 241.65282pt>
+File: ../img/graph10ospf.png Graphic file (type png)
+
+<use ../img/graph10ospf.png>
+Package pdftex.def Info: ../img/graph10ospf.png used on input line 220.
+(pdftex.def)             Requested size: 216.81pt x 128.40723pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../img/graph20ospf.png, id=25, 404.26031pt x 241.65282pt>
+File: ../img/graph20ospf.png Graphic file (type png)
+
+<use ../img/graph20ospf.png>
+Package pdftex.def Info: ../img/graph20ospf.png used on input line 226.
+(pdftex.def)             Requested size: 216.81pt x 129.60193pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../img/5responseospf.png, id=26, 362.10281pt x 216.81pt>
+File: ../img/5responseospf.png Graphic file (type png)
+
+<use ../img/5responseospf.png>
+Package pdftex.def Info: ../img/5responseospf.png used on input line 235.
+(pdftex.def)             Requested size: 216.81pt x 129.81572pt.
+
+<../img/10responseospf.png, id=27, 362.10281pt x 216.81pt>
+File: ../img/10responseospf.png Graphic file (type png)
+
+<use ../img/10responseospf.png>
+Package pdftex.def Info: ../img/10responseospf.png used on input line 241.
+(pdftex.def)             Requested size: 216.81pt x 129.81572pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: ../img/5responseospf.png Graphic file (type png)
+<use ../img/5responseospf.png>
+Package pdftex.def Info: ../img/5responseospf.png used on input line 247.
+(pdftex.def)             Requested size: 216.81pt x 129.81572pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <../img/graph5.png> <../img/graph10.png> <../img/graph20.png> <../img/graph5
+ospf.png> <../img/graph10ospf.png> <../img/graph20ospf.png> <../img/5responseos
+pf.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 []\OT1/ptm/m/n/8 Software-Defined Ne-twor-king (SDN) De-fi-ni-tion, $https : / 
 / www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 []\OT1/ptm/m/n/8 HP Vir-tual App-li-ca-tion Net-works (VAN) SDN
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 \OT1/ptm/m/n/8 Con-trol-ler, $https : / / www . sdxcentral . com / products /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+[]\OT1/ptm/m/n/8 Ruhann, OSPF Con-ver-gence, $https : / / routing-[]bits . com 
+/ 2009 / 08 / 06 /
  []
 
 
@@ -773,24 +827,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3 <../img/graph5.png> <../img/graph10.png> <../img/graph20.png>] (main.aux) ) 
+[4 <../img/10responseospf.png>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 4665 strings out of 493333
- 65825 string characters out of 3139194
- 148154 words of memory out of 3000000
- 8103 multiletter control sequences out of 15000+200000
+ 4692 strings out of 493333
+ 66474 string characters out of 3139194
+ 149162 words of memory out of 3000000
+ 8125 multiletter control sequences out of 15000+200000
  39643 words of font info for 76 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 40i,8n,25p,607b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
-{
-C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 542741 bytes).
+ 40i,8n,25p,789b,333s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/
+enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on main.pdf (4 pages, 578304 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
+ 54 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

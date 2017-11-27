@@ -47,7 +47,7 @@ Email: xjanec@stuba.sk}}
 
 \begin{abstract}
 %\boldmath
-
+Dynamické smerovacie protokoly sa v posledných desaťročiach značne rozvinuli. Avšak pri súčasných narastajúcich požiadavkách sa ich zavedenie do vnútorných firemných sieti stáva nevhodné v mnohých aspektoch. Ako východiskom pri súčasných požiadavkách sa stáva aplikovanie softvérovo definovaných sietí – SDN. Tento článok bol vypracovaný za účelom porovnania dosiahnutých výsledkov práce opísanych v článku  \cite{article}, kde autori porovnávali časy konvergencie a doby odozvy medzi OSPF ako zástupcom dynamických smerovacích protokolov a SDN. Naše výsledky potvrdili, že nasadenie SDN je v súčasnosti lepšou alternatívou ako OSPF. Ale výsledné časy neboli až tak rozdielne ako je uvedené v danom článku.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -62,8 +62,22 @@ Najčastejšie používaným smerovacím protokolom vo veľkých korporátnych, 
 
 \section{OSPF}
 
-Protokol OSPF patrí do skupiny protokolov \textit{Link-state}, a preto každý smerovač zapojený do siete pozná všetky ostatné smerovače v sieti, vzájomné prepojenia medzi nimi, všetky koncové aj prepojovacie siete a ceny všetkých rozhraní.
+Je dynamický smerovací protokol, ktorý sa používa v rámci jedného autonómneho systému (IGP). Patrí do skupiny Link-state protokolov vďaka čomu smerovač vo firemnej sieti pozná:
 
+\begin{itemize}
+	\item{Všetky ostatné smerovače}
+	\item{Vzájomné prepojenia medzi smerovačmi}
+	\item{Všetky koncové aj prepojovacie siete}
+	\item{Ceny všetkých rozhraní}
+\end{itemize}
+
+OSPF sa skladá z troch štruktúr:
+
+\begin{enumerate}
+\item{Tabuľka susedov – informácie o známych susedov}
+\item{Topologická databáza – informácie o všetkých smerovačoch a ich pripojených sieťach v danej oblasti ale taktiež aj informácie o sieťach v iných oblastiach, nad touto databázou každý smerovač pomocou SPF algoritmu si prepočíta najkratšiu cestu ku všetkým uzlom v sieti}
+\item{Smerovacia tabuľka – obsahuje next-hop na najkratšu cestu pre každú známu sieť}\cite{ospf}
+\end{enumerate}
 
 \section{Softvérovo riadené siete}
 
@@ -195,20 +209,62 @@ V testovacom prostredí sme vykonali 20 meraní pre každú topológiu a dosiahl
 \caption{Čas konvergencie v SDN pre 20 zariadení}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/graph5ospf}
+\caption{Čas konvergencie pre OSPF pre 5 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/graph10ospf}
+\caption{Čas konvergencie pre OSPF pre 10 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/graph20ospf}
+\caption{Čas konvergencie pre OSPF pre 20 zariadení}
+\end{figure}
+
+\newpage
+V nasledujúcich grafoch sme zobrazili čas konvergencie taktiež pre dané veľkosti topológie. Jednotlivé meranie sme vykonali 20 krát.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/5responseospf}
+\caption{Doba odozvy pre OSPF pre 5 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/10responseospf}
+\caption{Doba odozvy pre OSPF pre 10 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/5responseospf}
+\caption{Doba odozvy pre OSPF pre 20 zariadení}
+\end{figure}
+
 
 \section{Záver}
 
+V tejto práci sa venujeme porovnaniu času konvergencie a doby odozvy v sieťach založených na OSPF a SDN s OF prepínačmi. Na základe výsledkov môžeme taktiež potvrdiť, že budúcnosťou pri zvyšovaní požiadaviek je práve aplikovanie SDN. No naše výsledky aj keď sme sa riadili presne podľa krokov v porovnávanom článku neboli až tak diametrálne odlišné. Čo v podstate sa dalo očakávať, keďže podľa základnej charakteristiky OSPF a SDN nie je podľa nás možné aby došlo k takým zásadným rozdielom v časoch konvergencie a doby odozvy pri sieťach s 5, 10 a 20 uzlami ako boli uvádzané v článku podľa ktorého sme robili dané testovanie. 
+
+
 \begin{table}[h!]
 \centering
-\caption{My caption}
-\label{my-label}
+\caption{Porovnanie časov konvergencie}
+\label{convergencel}
 \begin{tabular}{|c|c|c|}
 \hline
                          & \multicolumn{2}{c|}{\textbf{Čas konvergencie}} \\ \hline
 \textbf{Počet zariadení} & \textbf{SDN {[}ms{]}}  & \textbf{OSPF {[}s{]}} \\ \hline
-\textbf{5}               & 1024.47                &                       \\ \hline
-\textbf{10}              & 1012.415             &                       \\ \hline
-\textbf{20}              & 1035.059               &                       \\ \hline
+\textbf{5}               & 1024.47                &          5.54445              \\ \hline
+\textbf{10}              & 1012.415             &          5.844            \\ \hline
+\textbf{20}              & 1035.059               &        5.78175                \\ \hline
 \end{tabular}
 \end{table}
 
@@ -236,11 +292,15 @@ V testovacom prostredí sme vykonali 20 meraní pre každú topológiu a dosiahl
 
 \bibitem{sixth}HP Virtual Application Networks (VAN) SDN Controller, \url{https://www.sdxcentral.com/products/hp-virtual-application-networks-van-sdn-controller/}
 
-\bibitem{seventh} What is Convergence of Routing Tables and What is Convergence Time, \url{http://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-convergence-of-routing-tables.php},  Accessed: 19.11.2017
+\bibitem{seventh}What is Convergence of Routing Tables and What is Convergence Time, \url{http://www.omnisecu.com/cisco-certified-network-associate-ccna/what-is-convergence-of-routing-tables.php},  Accessed: 19.11.2017
 
-\bibitem{eigth} PORETSKY, S.; IMHOFF, B.; MICHIELSEN, K. Benchmarking Methodology for Link-State IGP Data-Plane Route Convergence. 2011.
+\bibitem{eigth}PORETSKY, S.; IMHOFF, B.; MICHIELSEN, K. Benchmarking Methodology for Link-State IGP Data-Plane Route Convergence. 2011.
 
-\bibitem{nineth} ZHANG, Hailong; YAN, Jinyao. Performance of SDN routing in comparison with legacy routing protocols. In: Cyber-Enabled Distributed Computing and Knowledge Discovery (CyberC), 2015 International Conference on. IEEE, 2015. p. 491-494.
+\bibitem{nineth}ZHANG, Hailong; YAN, Jinyao. Performance of SDN routing in comparison with legacy routing protocols. In: Cyber-Enabled Distributed Computing and Knowledge Discovery (CyberC), 2015 International Conference on. IEEE, 2015. p. 491-494.
+
+\bibitem{article}KHAN, Asad Ali, et al. A Convergence Time Optimization Paradigm for OSPF based Networks Through SDN SPF Protocol Computer Communications and Networks (CCN)/Delay Tolerant Networks. In: Proceedings of the International Conference on Future Networks and Distributed Systems. ACM, 2017. p. 43.
+
+\bibitem{ospf}Ruhann, OSPF Convergence, \url{https://routing-bits.com/2009/08/06/ospf-convergence/}, Accessed: 27.11.2017
 
 \end{thebibliography}
 
