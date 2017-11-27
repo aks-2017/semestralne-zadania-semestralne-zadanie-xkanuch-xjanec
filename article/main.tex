@@ -174,6 +174,23 @@ Ten v IGP protokoloch pozostáva zo štyroch hlavných častí \cite{eigth}:
 	\item{Čas potrebný na aktualizáciu Flow tabuľky}
 \end{enumerate}
 
+\subsection{Doba odozvy}
+Doba odozvy v SDN sieťach pozostáva z:
+
+\begin{enumerate}
+	\item{Latencia linky}
+	\item{Zhoda vo Flow tabuľke}
+	\item{Čas odoslania dát}
+\end{enumerate}
+
+Doba odozvy pre OSPF siete pozostáva z:
+
+\begin{enumerate}
+	\item{Latencia linky}
+	\item{Vyhľadanie v smerovacej tabuľke}
+	\item{Čas odoslania dát}
+\end{enumerate}
+
 \subsection{Návrh scenára pre testovanie}
 
 Pre odmeranie času konvergencie siete sme navrhli nasledovný scenár:
@@ -228,7 +245,7 @@ V testovacom prostredí sme vykonali 20 meraní pre každú topológiu a dosiahl
 \end{figure}
 
 \newpage
-V nasledujúcich grafoch sme zobrazili čas konvergencie taktiež pre dané veľkosti topológie. Jednotlivé meranie sme vykonali 20 krát.
+V nasledujúcich grafoch sme zobrazili dobu odozvy taktiež pre dané veľkosti topológie. Jednotlivé meranie sme vykonali 20 krát.
 
 \begin{figure}[h!]
 \centering
@@ -244,27 +261,46 @@ V nasledujúcich grafoch sme zobrazili čas konvergencie taktiež pre dané veľ
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=3in]{../img/5responseospf}
+\includegraphics[width=3in]{../img/20responseospf}
 \caption{Doba odozvy pre OSPF pre 20 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/5responseSDN}
+\caption{Doba odozvy v SDN pre 5 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/10responseSDN}
+\caption{Doba odozvy v SDN pre 10 zariadení}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=3in]{../img/20responseSDN}
+\caption{Doba odozvy v SDN pre 20 zariadení}
 \end{figure}
 
 
 \section{Záver}
 
-V tejto práci sa venujeme porovnaniu času konvergencie a doby odozvy v sieťach založených na OSPF a SDN s OF prepínačmi. Na základe výsledkov môžeme taktiež potvrdiť, že budúcnosťou pri zvyšovaní požiadaviek je práve aplikovanie SDN. No naše výsledky aj keď sme sa riadili presne podľa krokov v porovnávanom článku neboli až tak diametrálne odlišné. Čo v podstate sa dalo očakávať, keďže podľa základnej charakteristiky OSPF a SDN nie je podľa nás možné aby došlo k takým zásadným rozdielom v časoch konvergencie a doby odozvy pri sieťach s 5, 10 a 20 uzlami ako boli uvádzané v článku podľa ktorého sme robili dané testovanie. 
+V tejto práci sme porovnali časy konvergencie a doby odozvy v sieťach založených na OSPF a SDN s Open vSwitch zariadeniami. Na základe výsledkov môžeme taktiež potvrdiť, že budúcnosťou pri zvyšovaní požiadaviek je práve v aplikovaní SDN. Pri testovaní sme použili rovnaké testovacie prostredie ako autori v článku \cite{article}, no hodnoty boli odlišné. Pri sieťach založených na protokole OSPF nie je možné dosiahnúť tak rozdielne výsledky v časoch konvergencie pri sieťach s 5, 10, 20 uzlami ako uvádzali autori. Taktiež sme nedosiahli rovnaký čas konvergencie v SDN. Autori neuviedli, ktoré linky v sieti boli vypnuté, a preto je možné, že narozdiel od nás, zhodili linku v slučke cez ktorú netiekla premávka. Čo sa týka doby odozvy, taktiež sme dostali iné výsledky, no tie sa približujú viac k výsledkom uvedeným v danom porovnávanom článku.
+
 
 
 \begin{table}[h!]
 \centering
-\caption{Porovnanie časov konvergencie}
-\label{convergencel}
-\begin{tabular}{|c|c|c|}
+\caption{Porovnanie priemerných časov doby odozvy a času konvergencie medzi SDN a OSPF sieťami}
+\label{my-label}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-                         & \multicolumn{2}{c|}{\textbf{Čas konvergencie}} \\ \hline
-\textbf{Počet zariadení} & \textbf{SDN {[}ms{]}}  & \textbf{OSPF {[}s{]}} \\ \hline
-\textbf{5}               & 1024.47                &          5.54445              \\ \hline
-\textbf{10}              & 1012.415             &          5.844            \\ \hline
-\textbf{20}              & 1035.059               &        5.78175                \\ \hline
+                         & \multicolumn{2}{c|}{\textbf{Čas konvergencie}} & \multicolumn{2}{c|}{\textbf{Doba odozvy}}      \\ \hline
+\textbf{Počet zariadení} & \textbf{SDN {[}ms{]}}  & \textbf{OSPF {[}s{]}} & \textbf{SDN {[}ms{]}} & \textbf{OSPF {[}ms{]}} \\ \hline
+\textbf{5}               & 1024.47                & 5.54445               & 7.7845                & 47.03885               \\ \hline
+\textbf{10}              & 1012.41455             & 5.844                 & 15.525                & 66.60895               \\ \hline
+\textbf{20}              & 1035.059               & 5.78175               & 28.1                  & 143.36625              \\ \hline
 \end{tabular}
 \end{table}
 
